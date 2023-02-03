@@ -1,11 +1,10 @@
-country = "France"
-capital = "paris"
+country = "Armenia"
+capital = "yerevan"
 answer =  "-" * len(capital)
 
 while True:
     ms = input("What is the capital of %s?: \n\t%s\nEnter one letter: " %(country,answer))
     ms = ms.lower()
-    print(ms)
     if len(ms) > 1:
         print("Please enter one letter")
     else:
