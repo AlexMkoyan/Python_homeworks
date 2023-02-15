@@ -5,7 +5,7 @@ w = 0
 num = 0
 count_quest = 4
 
-quest = ["2+2=? . (a)1\n(b)2\n(c)3\n(d)4 . d",
+quest = ["2+2=?a1b2c3d4",
         "1+1=? . (a)1\n(b)2\n(c)3\n(d)4 . b",
         "3+3=? . (a)1\n(b)2\n(c)6\n(d)4 . c",
         "4+4=? . (a)1\n(b)2\n(c)3\n(d)8 . d",
