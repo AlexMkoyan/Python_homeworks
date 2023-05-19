@@ -35,6 +35,6 @@ jobs:
       
       - name: Continue to next step
         run: |
-            echo "$output"
+          cat "$output"
       
       
