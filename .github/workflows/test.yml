@@ -28,13 +28,10 @@ jobs:
         run: |
           python3 test_prime.py |& tee a.txt
           cat a.txt | tail -c -3 |& tee b.txt
-          export output=$(cat b.txt)
-
-          # $output = `cat test_output.txt`
 
       
       - name: Continue to next step
         run: |
-          cat "$output"
+          bash check.sh
       
       
