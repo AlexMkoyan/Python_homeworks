@@ -26,12 +26,15 @@ jobs:
 
       - name: run_unit_tests
         run: |
-          python3 test_prime.py > test_output.txt
-          $output = `cat test_output.txt`
+          python3 test_prime.py |& tee a.txt
+          cat a.txt | tail -c -3 |& tee b.txt
+          export output=$(cat b.txt)
+
+          # $output = `cat test_output.txt`
+
       
       - name: Continue to next step
-        # if: steps.run_unit_tests.outcome == 'success'
         run: |
-            echo $output
+            echo "$output"
       
       
