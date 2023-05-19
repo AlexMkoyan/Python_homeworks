@@ -27,11 +27,11 @@ jobs:
       - name: run_unit_tests
         run: |
           python3 test_prime.py > test_output.txt
-          cat test_output.txt >> "$output"
+          $output = `cat test_output.txt`
       
       - name: Continue to next step
         # if: steps.run_unit_tests.outcome == 'success'
         run: |
-            echo "aaaaaaaa $output"
+            echo $output
       
       
