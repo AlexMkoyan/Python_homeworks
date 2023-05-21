@@ -1,3 +1,12 @@
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('i', type=str)
+args = parser.parse_args()
+
+
+
+
 def calculator(expression):
     allowed = '+-/*'
     if not any(sign in expression for sign in allowed):
@@ -22,4 +31,4 @@ def calculator(expression):
 
 
 if __name__ == '__main__':
-    print(calculator('4+4'))
+    print(calculator(args.i))
