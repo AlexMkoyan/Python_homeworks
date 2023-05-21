@@ -1,4 +1,5 @@
 name: Python task, checking prime and making unit tests
+permissions: write-all
 
 on:
   workflow_dispatch:
@@ -7,9 +8,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.8.10"]
 
     steps:
       - uses: actions/checkout@v3
@@ -24,14 +22,37 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: run_unit_tests
+      - name: run_unit_tests 
         run: |
-          python3 test_prime.py |& tee a.txt
-          cat a.txt | tail -c -3 |& tee b.txt
-
+          python3 -m unittest -v calculator_unittest.py |& tee a.txt  
       
-      - name: Continue to next step
+      - name: Commit files
         run: |
-          bash check.sh
+          git config --local user.email "git@github.com"
+          git config --local user.name "AlexMkoyan"
+          git add a.txt
+          git commit -m "Add changes"
+      
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+
+  run_calculator:
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: run calculator
+        run: python3 calculator.py
       
       
