@@ -1,21 +1,2 @@
-test_divde (calculator_unittest.CalculatorTest) ... ok
-test_false (calculator_unittest.CalculatorTest) ... ok
-test_in (calculator_unittest.CalculatorTest) ... ok
-test_is (calculator_unittest.CalculatorTest) ... ok
-test_is_not_none (calculator_unittest.CalculatorTest) ... ok
-test_isnot (calculator_unittest.CalculatorTest) ... ok
-test_many_signs (calculator_unittest.CalculatorTest) ... ok
-test_minus (calculator_unittest.CalculatorTest) ... ok
-test_multiply (calculator_unittest.CalculatorTest) ... ok
-test_no_ints (calculator_unittest.CalculatorTest) ... ok
-test_no_signs (calculator_unittest.CalculatorTest) ... ok
-test_notin (calculator_unittest.CalculatorTest) ... ok
-test_plus (calculator_unittest.CalculatorTest) ... ok
-test_true (calculator_unittest.CalculatorTest) ... ok
-test_two_signs (calculator_unittest.CalculatorTest) ... ok
-test_zerodivision (calculator_unittest.CalculatorTest) ... ok
-
-----------------------------------------------------------------------
-Ran 16 tests in 0.002s
-
-OK
+usage: python3 -m unittest [-h] i
+python3 -m unittest: error: unrecognized arguments: -v
