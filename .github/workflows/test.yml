@@ -58,6 +58,6 @@ jobs:
           python-version: '3.10'
       
       - name: run calculator
-        run: python3 calculator.py ${{inputs.type_instance}}
+        run: python3 calculator.py ${{inputs.inputt}}
       
       
